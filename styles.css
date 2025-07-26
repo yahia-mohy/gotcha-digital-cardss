@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.business-card {
+    background: #000;
+    width: 100%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+        "logo logo"
+        "contact button"
+        "social tagline";
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    padding: 40px 50px;
+    gap: 20px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Section */
+.logo-section {
+    grid-area: logo;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.logo {
+    text-align: right;
+}
+
+.logo-text {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.logo-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.2;
+}
+
+/* Contact Section */
+.contact-section {
+    grid-area: contact;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
+}
+
+.name {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    line-height: 1.3;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.contact-item .label {
+    font-weight: 500;
+    min-width: 80px;
+    margin-right: 20px;
+}
+
+.contact-item .value {
+    font-weight: 400;
+}
+
+.contact-item.location {
+    margin-top: 8px;
+}
+
+.contact-item.location .value {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* Button Section */
+.button-section {
+    grid-area: button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-contact-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+    font-family: inherit;
+}
+
+.add-contact-btn:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.add-contact-btn:active {
+    transform: translateY(0);
+}
+
+/* Social Section */
+.social-section {
+    grid-area: social;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Tagline */
+.tagline {
+    grid-area: tagline;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.8;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .business-card {
+        max-width: 100%;
+        height: auto;
+        min-height: 500px;
+        grid-template-areas: 
+            "logo"
+            "contact"
+            "button"
+            "social"
+            "tagline";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+        padding: 30px;
+        gap: 24px;
+    }
+
+    .logo-section {
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+
+    .logo-text {
+        font-size: 36px;
+    }
+
+    .logo-subtitle {
+        font-size: 14px;
+    }
+
+    .contact-section {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .name {
+        font-size: 32px;
+    }
+
+    .title {
+        font-size: 16px;
+    }
+
+    .contact-details {
+        align-items: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .contact-item .label {
+        min-width: auto;
+        margin-right: 8px;
+    }
+
+    .button-section {
+        justify-content: center;
+    }
+
+    .social-section {
+        justify-content: center;
+    }
+
+    .tagline {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .business-card {
+        padding: 24px;
+    }
+
+    .name {
+        font-size: 28px;
+    }
+
+    .logo-text {
+        font-size: 32px;
+    }
+
+    .contact-item {
+        font-size: 14px;
+    }
+
+    .add-contact-btn {
+        padding: 14px 28px;
+        font-size: 15px;
+    }
+}
+
