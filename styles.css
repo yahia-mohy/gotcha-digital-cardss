@@ -67,7 +67,7 @@ body {
     grid-area: contact;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     padding-right: 40px;
 }
 
@@ -97,15 +97,13 @@ body {
 
 .contact-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     font-size: 16px;
     line-height: 1.4;
 }
 
 .contact-item .label {
     font-weight: 500;
-    min-width: 80px;
-    margin-right: 20px;
 }
 
 .contact-item .value {
@@ -159,6 +157,7 @@ body {
     display: flex;
     gap: 16px;
     align-items: center;
+    width: 50%;
 }
 
 .social-icon {
@@ -179,6 +178,15 @@ body {
     height: 100%;
 }
 
+.contact-item .icon {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 0.8;
+}
+
+
 /* Tagline */
 .tagline {
     grid-area: tagline;
@@ -188,7 +196,7 @@ body {
     text-align: right;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
 }
 
 /* Responsive Design */
@@ -210,15 +218,15 @@ body {
     }
 
     .logo-section {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .logo {
-        text-align: center;
+        text-align: left;
     }
 
     .logo-text {
-        font-size: 36px;
+        font-size: 50px;
     }
 
     .logo-subtitle {
@@ -239,18 +247,17 @@ body {
     }
 
     .contact-details {
-        align-items: center;
+        align-items: flex-start;
     }
 
     .contact-item {
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 8px;
     }
 
     .contact-item .label {
         min-width: auto;
-        margin-right: 8px;
     }
 
     .button-section {
@@ -262,7 +269,7 @@ body {
     }
 
     .tagline {
-        text-align: center;
+        text-align: left;
         justify-content: center;
     }
 }
@@ -277,7 +284,7 @@ body {
     }
 
     .logo-text {
-        font-size: 32px;
+        font-size: 50px;
     }
 
     .contact-item {
